@@ -5,13 +5,19 @@
     <title>Module 1 Solution | Coursera Angular JS</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
   </head>
-  <body ng-app="angularApp">
+  <body ng-app="LunchCheck">
   	<h1>Module 1 Solution | Coursera Angular JS</h1>
-    <div ng-controller="mainCtrl">
-      
+    <div ng-controller="LunchCheckController">
+      <label>Write here!</label>
+      <br>
+      <textarea ng-class="textAreaClass" ng-model="foodString"></textarea>
+      <br>
+      <button ng-click="checkFood(foodString)">Check If Too Much</button>
+      <p ng-show="messageDisplay">{{message}}</p>
+      <p>{{foodArray}}</p>
     </div>
 
-    <script src="../vendor/angular.min.js"></script>
+    <script src="angular.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
