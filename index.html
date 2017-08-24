@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Coursera Angular JS</title>
-</head>
-<body>
-	<h1>Hello people</h1>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Coursera Angular JS</title>
+  </head>
+  <body ng-app="angularApp">
+  	<h1>Coursera AngularJS</h1>
+    <div ng-controller="mainCtrl">
+    	Your name is: <input type="text" ng-model="name" ng-keyup="displayNumeric()" ng-blur="upper()">
+    	<p>ASCII numeric value is: {{totalValue}}</p>
+    </div>
+  </body>
 </html>
