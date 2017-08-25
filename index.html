@@ -9,8 +9,11 @@
   <body ng-app="angularApp">
   	<h1>Coursera AngularJS</h1>
     <div ng-controller="mainCtrl">
-    	Your name is: <input type="text" ng-model="name" ng-keyup="displayNumeric()" ng-blur="upper()">
-    	<p>ASCII numeric value is: {{totalValue}}</p>
+    	Input to filter: <input type="text" ng-model="name" ng-keyup="displayNumeric()" ng-blur="upper()">
+    	<p>String length: {{name | length}}</p>
+      <p>String evens: {{name | evens}}</p>
+      <p>String inverted: {{name | inverted}}</p>
+      <p>Crazy things could happen when chaining...: {{name | evens | inverted}}</p>
     </div>
   </body>
 </html>

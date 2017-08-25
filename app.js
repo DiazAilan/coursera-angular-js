@@ -3,11 +3,19 @@
 (() => {
 	angular.module('angularApp', [])
 
-	.controller('mainCtrl', mainCtrl);
+	.controller('mainCtrl', mainCtrl)
 
-	mainCtrl.$inject = ['$scope', '$filter'];
+	.filter('length', LengthFilterFactory)
+	.filter('evens', EvensFilterFactory)
+	.filter('inverted', InvertedFilterFactory)
 
-	function mainCtrl($scope, $filter) {
+	mainCtrl.$inject = ['$scope',
+						'$filter',
+						'lengthFilter',
+						'evensFilter',
+						'invertedFilter'];
+
+	function mainCtrl($scope, $filter, lengthFilter, evensFilter, invertedFilter) {
 		$scope.name = '';
 		$scope.totalValue = 0;
 
@@ -32,5 +40,29 @@
 		}
 
 	};
+
+	function LengthFilterFactory() {
+		return (input) => {
+			return input.length;
+		}
+	}
+
+	function EvensFilterFactory() {
+		return (input) => {
+			let changedInput = "";
+			let i = 0;
+			for(i; i < input.length; i+=2) {
+				changedInput += input.substring(i,i+1);
+			}
+			return changedInput;
+		}
+	}
+
+	function InvertedFilterFactory() {
+		return (input) => {
+			let changedInput = input.split("").reverse().join("");
+			return changedInput;
+		}
+	}
 
 })();
