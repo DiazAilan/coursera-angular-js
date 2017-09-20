@@ -25,8 +25,8 @@
 			}
 		}
 
-		this.removeFoundItem = (event) => {
-			this.found.splice(event.index, 1)
+		this.removeFoundItem = (index) => {
+			this.found.splice(index, 1)
 		}
 	}
 
