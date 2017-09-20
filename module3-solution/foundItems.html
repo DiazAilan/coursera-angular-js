@@ -1,8 +1,10 @@
 <ul>
 	<li ng-repeat="item in items">
-		<span class="label label-primary">{{item.short_name}}</span> 
+		<span class="label label-primary">{{item.name}}</span>
+		<span class="badge">{{item.short_name}}</span> 
 		<span class="description">{{item.description}}</span>
-		<button class="btn btn-default" ng-click="onRemove({index: $index})">Don't want this one!</button>
+		<br>
+		<button class="btn btn-default btn-xs" ng-click="onRemove({index: $index})">Don't want this one!</button>
 	</li>
 </ul>
 <div class="error" ng-hide="items.length">We don't found any item</div>
