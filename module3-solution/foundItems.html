@@ -1,0 +1,6 @@
+<ul>
+	<li ng-repeat="item in items">
+		<span>{{item.short_name}} {{item.description}}</span>
+	</li>
+</ul>
+<div class="error" ng-hide="items.length">We don't found any item</div>
